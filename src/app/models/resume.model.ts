@@ -26,6 +26,7 @@ export interface ResumeData {
         email: string;
         github: string;
         linkedin: string;
+        instagram?: string;
         summary: string;
         images?: {
             hero?: string;

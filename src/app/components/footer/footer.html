@@ -13,6 +13,10 @@
                 class="hover:text-primary transition-colors">
                 LinkedIn
             </a>
+            <a *ngIf="resumeData()?.profile?.instagram" [href]="resumeData()?.profile?.instagram" target="_blank"
+                class="hover:text-primary transition-colors">
+                Instagram
+            </a>
             <a *ngIf="resumeData()?.profile?.email" [href]="'mailto:' + resumeData()?.profile?.email"
                 class="hover:text-primary transition-colors">
                 Email

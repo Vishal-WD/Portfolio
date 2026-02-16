@@ -1,0 +1,19 @@
+<section id="skills" class="py-20 bg-gray-900 border-t border-gray-800">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Technical Skills</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div *ngFor="let category of resumeData()?.skills"
+                class="bg-card-bg rounded-xl p-6 shadow-lg hover:shadow-primary/10 transition-shadow border border-gray-800">
+                <h3 class="text-xl font-semibold mb-4 text-secondary border-b border-gray-700 pb-2">{{ category.name }}
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span *ngFor="let skill of category.skills"
+                        class="px-3 py-1 bg-gray-800 text-gray-300 rounded-lg text-sm border border-gray-700 hover:border-primary/50 hover:text-primary transition-colors">
+                        {{ skill }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

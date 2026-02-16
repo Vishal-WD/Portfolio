@@ -2,7 +2,7 @@ import { ResumeData } from '../models/resume.model';
 
 export const RESUME_DATA: ResumeData = {
     profile: {
-        name: 'C. VISHAL',
+        name: 'VISHAL',
         phone: '+91 8590556670',
         email: 'vishalchandran6126@gmail.com',
         github: 'https://github.com/Vishal-WD',
@@ -41,7 +41,7 @@ export const RESUME_DATA: ResumeData = {
     skills: [
         {
             name: 'Languages',
-            skills: ['Python', 'Java', 'C', 'JavaScript', 'HTML', 'CSS', 'React']
+            skills: ['Python', 'Java', 'React', 'Angular', 'C', 'JavaScript', 'HTML', 'CSS']
         },
         {
             name: 'AI & Machine Learning',

@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-secondary: #9333ea;
-  --color-dark-bg: #0f172a;
+  --color-primary: #0ea5e9;
+  /* Sky 500 */
+  --color-secondary: #8b5cf6;
+  /* Violet 500 */
+  --color-dark-bg: #020617;
+  /* Slate 950 */
   --color-card-bg: #1e293b;
+  /* Slate 800 */
 
   --font-sans: 'Inter', sans-serif;
 }

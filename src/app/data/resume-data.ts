@@ -53,18 +53,37 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: 'Database & Backend',
-            skills: ['PostgreSQL', 'DBMS(SQL)', 'Firebase', 'FastAPI (REST APIs, JWT Authentication)']
+            skills: ['PostgreSQL','FastAPI (REST APIs, JWT Authentication)', 'Firebase', 'DBMS(SQL)']
         },
         {
             name: 'Tools',
-            skills: ['Git', 'Github', 'VS Code', 'Anaconda Environment', 'Google Colab']
+            skills: ['Google Colab', 'Git', 'Github', 'VS Code', 'Anaconda Environment']
         },
         {
             name: 'Data Analysis Tools',
             skills: ['Power BI', 'Tableau']
         }
     ],
-    projects: [
+    projects: [{
+  "title": "AquaSense AI",
+  "subtitle": "Real-Time Global Water Quality Monitoring & Predictive Analytics System",
+  "technologies": [
+    "React.js",
+    "Tailwind CSS",
+    "Leaflet.js",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "SQLAlchemy",
+    "Scikit-learn"
+  ],
+  "description": [
+    "Architected a full-stack IoT dashboard to monitor 282+ water stations across the USA and UK, visualizing critical metrics like pH, Turbidity, and Dissolved Oxygen in real-time.",
+    "Engineered a predictive analysis engine using Random Forest Regressors to forecast water quality trends and detect anomalies before they become critical hazards.",
+    "Developed an automated alert system that triggers multi-level notifications (Critical/Warning/Info) based on dynamic sensor thresholds and historical patterns.",
+    "Integrated Google Gemini AI to generate context-aware summary reports and actionable mitigation strategies for station managers based on complex sensor data."
+  ]
+},
         {
             title: 'Campus Connect',
             subtitle: 'Full-Stack Role-Based Web Platform',
@@ -75,14 +94,26 @@ export const RESUME_DATA: ResumeData = {
             ]
         },
         {
-            title: 'LUNA',
-            subtitle: 'GenAI Powered Terminal Assistant',
-            technologies: ['Python', 'LangChain', 'OpenAI'],
-            description: [
-                'Developed a Python-based GenAI-powered terminal assistant that integrates with the command prompt to track commands.',
-                'Implemented real-time explanations of executed commands using Generative AI for learning and documentation and designed time and session-based logging to generate automated reports and improve workflow insights.'
-            ]
-        }
+  title: 'LUNA',
+  subtitle: 'GenAI Powered Terminal Assistant',
+  technologies: ['Python', 'LangChain', 'OpenAI'],
+  description: [
+    'Built LUNA, a GenAI-powered assistant that wraps the native shell using a pseudo-terminal “carbon copy” layer to track commands and outputs.',
+    'Implemented episodic memory with a structured JSON ledger and local RAG so LUNA can recall past errors and fixes and suggest inline remedies (e.g., `? fix this`).',
+    'Added automated, session-based Markdown reports summarizing key errors, fixes, and important commands for documentation and standups.'
+  ]
+},
+{
+title: 'Vitality Compass',
+subtitle: 'Personalized Health Analytics & Wellness Suite',
+technologies: ['React', 'JavaScript', 'Google Gemini API', 'Firebase'],
+description: [
+'Engineered Vitality Compass to track and visualize longitudinal medical data, including blood markers, cholesterol levels, and biometric data (BMI/Height/Weight).',
+'Developed a trend analysis engine that identifies patterns in historical health checkup data to provide users with a clear trajectory of their physical well-being.',
+'Integrated LLM-driven reasoning to generate hyper-personalized diet and workout regimens based on the user’s specific medical profile and health goals.'
+]
+}
+
     ],
     publications: [
         {

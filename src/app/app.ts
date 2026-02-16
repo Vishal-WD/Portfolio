@@ -7,6 +7,9 @@ import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
 import { Contact } from './components/contact/contact';
 
+import { Certifications } from './components/certifications/certifications';
+import { Publications } from './components/publications/publications';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -16,6 +19,8 @@ import { Contact } from './components/contact/contact';
     About,
     Skills,
     Projects,
+    Publications,
+    Certifications,
     Contact
   ],
   templateUrl: './app.html',

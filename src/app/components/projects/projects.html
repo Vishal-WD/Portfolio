@@ -1,22 +1,36 @@
-<section id="projects" class="py-20 bg-slate-900/50 relative">
-    <div class="container mx-auto px-6 relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Featured Projects</h2>
+<section id="projects" class="py-24 relative overflow-hidden">
+    <!-- Background Decoration -->
+    <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent">
+    </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div *ngFor="let project of resumeData()?.projects"
-                class="group bg-card-bg rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-800">
-                <!-- Project Header -->
-                <div class="p-6 md:p-8">
+    <div class="container mx-auto px-6 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+            <span class="text-gradient">Featured Projects</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div *ngFor="let project of resumeData()?.projects; let i = index"
+                class="glass-card rounded-2xl overflow-hidden group relative flex flex-col h-full animate-fade-in-up"
+                [style.animation-delay]="(i * 100) + 'ms'">
+
+                <!-- Project Highlight Glow -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+
+                <div class="p-8 flex flex-col flex-grow relative z-10">
                     <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">{{ project.title
-                                }}</h3>
-                            <p class="text-secondary text-sm font-medium">{{ project.subtitle }}</p>
+                        <div
+                            class="bg-primary/10 p-3 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
                         </div>
-                        <!-- Optional Project Link Icon -->
+
                         <a *ngIf="project.link" [href]="project.link" target="_blank"
-                            class="text-gray-400 hover:text-white">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
                                 </path>
@@ -24,18 +38,27 @@
                         </a>
                     </div>
 
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-white">{{
+                        project.title }}</h3>
+                    <p class="text-primary-300 text-sm font-medium mb-4 uppercase tracking-wider">{{ project.subtitle }}
+                    </p>
+
+                    <div class="space-y-3 mb-6 flex-grow">
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li *ngFor="let desc of project.description" class="flex items-start">
+                                <span class="mr-2 text-primary mt-1">•</span>
+                                {{ desc }}
+                            </li>
+                        </ul>
+                    </div>
+
                     <!-- Technologies -->
-                    <div class="flex flex-wrap gap-2 mb-6">
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
                         <span *ngFor="let tech of project.technologies"
-                            class="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-semibold">
+                            class="px-3 py-1 bg-white/5 border border-white/5 text-gray-300 rounded-full text-xs font-medium hover:bg-primary/20 hover:border-primary/30 hover:text-primary-200 transition-colors cursor-default">
                             {{ tech }}
                         </span>
                     </div>
-
-                    <!-- Description -->
-                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
-                        <li *ngFor="let desc of project.description">{{ desc }}</li>
-                    </ul>
                 </div>
             </div>
         </div>

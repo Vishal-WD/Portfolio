@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Header {
   isMenuOpen = false;
+  isResumeOpen = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -17,5 +18,15 @@ export class Header {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  toggleResume() {
+    this.isResumeOpen = !this.isResumeOpen;
+    if (this.isResumeOpen) {
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    this.closeMenu();
   }
 }

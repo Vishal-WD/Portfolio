@@ -1,15 +1,17 @@
 <section class="max-w-4xl mx-auto py-12 px-6" *ngIf="resumeData() as data">
     <div class="flex items-center gap-4 mb-8">
         <div class="h-1 w-12 bg-secondary rounded-full"></div>
-        <h2 class="text-3xl font-bold text-white">Certifications</h2>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Certifications</h2>
     </div>
 
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div *ngFor="let cert of data.certifications"
-            class="group relative bg-card-bg p-6 rounded-xl border border-slate-700 hover:border-secondary transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div *ngFor="let cert of data.certifications; let i = index"
+            class="glass-card p-6 rounded-xl group relative animate-fade-in-up"
+            [style.animation-delay]="(i * 100) + 'ms'">
+
             <div class="flex items-start gap-4">
                 <div
-                    class="p-2 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform duration-300">
+                    class="p-3 bg-secondary/10 rounded-xl text-secondary group-hover:scale-110 group-hover:bg-secondary/20 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -17,8 +19,9 @@
                     </svg>
                 </div>
                 <div class="flex-1">
-                    <p class="text-slate-300 font-medium group-hover:text-white transition-colors duration-300">{{ cert
-                        }}</p>
+                    <p
+                        class="text-gray-300 font-medium group-hover:text-white transition-colors duration-300 leading-snug">
+                        {{ cert }}</p>
                 </div>
             </div>
         </div>

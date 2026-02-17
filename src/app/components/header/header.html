@@ -1,41 +1,78 @@
-<header class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-primary/20 shadow-lg">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#"
-            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-            C. VISHAL
-        </a>
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="glass mx-auto max-w-7xl md:mt-4 md:rounded-2xl border-b md:border border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-display tracking-tight hover:opacity-80 transition-opacity">
+                <span class="text-gradient">C. VISHAL</span>
+            </a>
 
-        <!-- Desktop Menu -->
-        <nav class="hidden md:flex space-x-8">
-            <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
-            <a href="#skills" class="hover:text-primary transition-colors duration-300">Skills</a>
-            <a href="#projects" class="hover:text-primary transition-colors duration-300">Projects</a>
-            <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
-        </nav>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="#about"
+                    class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-all">About</a>
+                <a href="#skills"
+                    class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-all">Skills</a>
+                <a href="#projects"
+                    class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-all">Projects</a>
+                <a href="#contact"
+                    class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-full transition-all">Contact</a>
+                <button (click)="toggleResume()"
+                    class="ml-4 px-5 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+                    Resume
+                </button>
+            </nav>
 
-        <!-- Mobile Menu Button -->
-        <button (click)="toggleMenu()" class="md:hidden text-white focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"></path>
-                <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
+            <!-- Mobile Menu Button -->
+            <button (click)="toggleMenu()" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div *ngIf="isMenuOpen" class="md:hidden bg-slate-900 shadow-xl border-t border-primary/20">
-        <div class="flex flex-col px-6 py-4 space-y-4">
-            <a href="#about" (click)="closeMenu()"
-                class="block hover:text-primary transition-colors font-medium">About</a>
+    <div *ngIf="isMenuOpen"
+        class="md:hidden glass border-t border-white/10 absolute w-full left-0 animate-fade-in-down">
+        <div class="flex flex-col px-6 py-6 space-y-4">
+            <a href="#about" (click)="closeMenu()" class="text-lg font-medium text-gray-300 hover:text-white">About</a>
             <a href="#skills" (click)="closeMenu()"
-                class="block hover:text-primary transition-colors font-medium">Skills</a>
+                class="text-lg font-medium text-gray-300 hover:text-white">Skills</a>
             <a href="#projects" (click)="closeMenu()"
-                class="block hover:text-primary transition-colors font-medium">Projects</a>
+                class="text-lg font-medium text-gray-300 hover:text-white">Projects</a>
             <a href="#contact" (click)="closeMenu()"
-                class="block hover:text-primary transition-colors font-medium">Contact</a>
+                class="text-lg font-medium text-gray-300 hover:text-white">Contact</a>
+            <button (click)="toggleResume()"
+                class="text-left text-lg font-medium text-primary hover:text-primary/80">Resume</button>
+        </div>
+    </div>
+
+    <!-- Resume Viewer Modal -->
+    <div *ngIf="isResumeOpen"
+        class="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-8 animate-fade-in-down">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" (click)="toggleResume()"></div>
+
+        <!-- Modal Content -->
+        <div class="relative w-full h-full max-w-6xl bg-gray-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-4 border-b border-white/10 bg-slate-900">
+                <h3 class="text-xl font-bold text-white">Resume</h3>
+                <button (click)="toggleResume()"
+                    class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Resume Iframe -->
+            <div class="flex-1 bg-white/5 relative">
+                <iframe src="assets/RESUME - Vishal.pdf" class="w-full h-full border-0" title="Resume"></iframe>
+            </div>
         </div>
     </div>
 </header>

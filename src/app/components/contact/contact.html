@@ -14,11 +14,11 @@
             want to say hi, I'll try my best to get back to you!
         </p>
 
-        <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             <!-- Contact Info -->
             <div class="space-y-8">
-                <div class="glass-card p-8 rounded-2xl animate-fade-in-up">
-                    <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                <div class="glass-card p-6 md:p-8 rounded-2xl animate-fade-in-up">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center md:text-left">Contact Information</h3>
 
                     <div class="space-y-6">
                         <div class="flex items-center space-x-4 group">
@@ -31,7 +31,7 @@
                                 </svg>
                             </div>
                             <a [href]="'mailto:' + resumeData()?.profile?.email"
-                                class="text-gray-300 hover:text-white transition-colors text-lg">{{
+                                class="text-gray-300 hover:text-white transition-colors text-lg break-all md:break-normal">{{
                                 resumeData()?.profile?.email }}</a>
                         </div>
 
@@ -47,7 +47,7 @@
                             <span class="text-gray-300 text-lg">{{ resumeData()?.profile?.phone }}</span>
                         </div>
 
-                        <div class="pt-6 flex space-x-4">
+                        <div class="pt-6 flex justify-center md:justify-start space-x-4">
                             <a [href]="resumeData()?.profile?.github" target="_blank"
                                 class="p-3 bg-white/5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all hover:-translate-y-1">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="glass-card p-8 rounded-2xl animate-fade-in-up delay-200">
+            <div class="glass-card p-6 md:p-8 rounded-2xl animate-fade-in-up delay-200">
                 <form (ngSubmit)="submitForm()" #contactForm="ngForm" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
@@ -97,4 +97,5 @@
             </div>
         </div>
     </div>
+
 </section>
